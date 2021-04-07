@@ -1,0 +1,46 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Messages</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://kit.fontawesome.com/8779722e4c.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{%static 'messanger/css/messanger.css'%}">
+</head>
+<body>
+    <aside>
+        <span class="logo">In touch!</span>
+        <h4>Navigation:</h4>
+        <ul>
+            <a href="{%url 'profile'%}"><li><i class="fas fa-id-card"></i> Profile</li></a>
+            <a href="{%url 'messanger'%}"><li><i class="fas fa-envelope"></i> Messages</li></a>
+        </ul>
+        <form action="/" method="POST"> {% csrf_token %}
+            <input type="submit" name='logout' value="Logout" class="button">
+        </form>
+    </aside>
+    <div class='chats'>
+        <form action="" method="POST"> {% csrf_token %}
+            <input type="submit" name='friend_requests' value="Requests" class="button"><br><br>
+            <input type="submit" name='find_user' value="Find user" class="button"><br><br>
+            <input type="submit" name='chat' value="Chats" class="button"><br><br>
+        </form>
+        {%if list_of_friends.list_of_friends%}
+        <div style="overflow: scroll; max-height: 600px; min-height: 600px;">
+        <br><h3>Friend List: </h3>
+        <form action="" method="POST" class='friends'> {% csrf_token %}
+            {%for i, j in list_of_friends.list_of_friends.items%}
+            <input type="submit" name='friend' value="{{j}}" class="button"><br><br>
+            {%endfor%}
+        </form>
+        </div>
+        {%endif%}
+    </div>
+    <main>
+        {%block body%}
+        {%endblock%}
+    </main>
+</body>
+</html>

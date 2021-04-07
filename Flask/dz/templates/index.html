@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block Title %}Меню{% endblock %}
+
+{% block Content %}
+    <div class="wrapper">
+        {% for m in menu %}
+            <div class="wrapper__item">
+                <a href="{{ m.url }}" class="link">{{ m.name }}</a>
+            </div>
+            <br>
+        {% endfor %}
+    </div>
+{% endblock %}

@@ -1,0 +1,27 @@
+{%extends 'messanger/base.html'%}
+
+{%block body%}
+        {%if chat_history.chat_history%}
+        <div class="chat_body">  <!-- <iframe> + ajax -->
+            <br>
+                <div class="chat">
+                    {%for i, j in chat_history.chat_history.items%}
+                        <br>
+                        <div class="message" id={{i}}>
+                            <i style="color: aquamarine;">{{j.date_message}}</i><br><b style="color: aqua;">{{j.from_friend.title}}</b><br>
+                            {{j.text}}
+                        </div><br>
+                        <script>
+                            document.getElementById('{{i}}').scrollIntoView();
+                        </script>
+                    {%endfor%}
+                </div>
+                <form method="POST" action="" style="width: 80%; margin-left: 12%;">
+                    {% csrf_token %}
+                    <br>
+                    <input id='text_area' name="text_area" type="text" placeholder="Your message: " required=''>
+                    <input id='button' name="send" type="submit" value="Send">
+                </form>
+        </div> <!-- </iframe> -->
+        {%endif%}
+{%endblock%}

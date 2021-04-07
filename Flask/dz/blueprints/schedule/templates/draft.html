@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block Title %}
+    Черновик
+{% endblock %}
+
+{% block Content %}
+    <div class="wrapper">
+            {% if draft|count %}
+                {% for key, value in draft.items() %}
+                <form action="" method=POST name="{{ key }}">
+                        <table class="wrapper__item" border="1" width="100%">
+                                <tr>
+                                    <td align="center" style="background-color: aqua"> Project </td>
+                                    <td align="center" style="background-color: aqua"> {{ key }} </td>
+                                </tr>
+                                <tr>
+                                    <td align="center" style="background-color: aqua"> Schedule </td>
+                                    <td align="center" style="background-color: aqua"> {{ value }} </td>
+                                </tr>
+                                <td>
+                                    <input type='hidden' name='idproject' value={{ key }}>
+                                    <input class="button button-standard" type='submit' value='Принять запись' name='insert'>
+                                    <input class="button button-standard" type='submit' value='Удалить' name='clear'>
+                                </td>
+                        </table>
+                 </form>
+                {% endfor %}
+                <form action="" method="POST">
+                    <div class="wrapper__item">
+                        <input class="button button-standard" value="Принять расписание" name="insert" type='submit'>
+                        <input class="button button-standard" value="Очистить всё" name="clear" type='submit'>
+                    </div>
+                </form>
+            {% else %}
+                <h2>Нет записей</h2>
+            {% endif %}
+            <div class="wrapper__item">
+            </div>
+            <div class="wrapper__item">
+                <a href="/schedule/" class="link">Назад</a><br><br>
+                <a href="/" class="link">В меню</a>
+            </div>
+    </div>
+{% endblock %}

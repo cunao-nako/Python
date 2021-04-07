@@ -1,0 +1,12 @@
+{%extends 'main/base.html'%}
+
+{%block title%}Messages{%endblock%}
+
+{%block body%}
+<div class="profile">
+    <h1>Chat</h1>
+    <form action="/" method="POST"> {% csrf_token %}
+        <input type="submit" name='send' value="Send message" class="button">
+    </form>
+</div>
+{%endblock%}

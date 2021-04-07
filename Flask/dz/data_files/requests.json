@@ -1,0 +1,26 @@
+[
+    {
+        "query":"SELECT topic, FIO, s.group, surname, p_date, p_mark FROM project JOIN student s USING(ID_student) JOIN teacher USING(ID_teacher) WHERE YEAR(p_date)=2017 AND MONTH(p_date)=5",
+        "schema": "Тема, ФИО, Группа, Фамилия преподавателя, Дата защиты, Оценка"
+    },
+    {
+        "query":"SELECT ID_project, p_date, p_mark, topic FROM project JOIN teacher USING(ID_teacher) WHERE surname='XXX' AND YEAR(p_date)=2017",
+        "schema": "Номер проекта, Дата защиты, Оценка, Тема"
+    },
+    {
+        "query":"SELECT * FROM teacher WHERE employment = (SELECT MIN(employment) FROM teacher WHERE dismissal is null);",
+        "schema": "ID, Дата рождения, Фамилия, Кафедра, Дата принятия на работу"
+    },
+    {
+        "query":"SELECT t.ID_teacher, t_birthday, surname, department, employment, dismissal FROM teacher t LEFT JOIN project p ON p.ID_teacher=t.ID_teacher WHERE ID_project is NULL",
+        "schema": "ID, Дата рождения, Фамилия, Кафедра, Дата принятия на работу, Дата конца работа"
+    },
+    {
+        "query":"SELECT t.ID_teacher, t_birthday, surname, department, employment,  dismissal FROM teacher t LEFT JOIN (SELECT * FROM project WHERE YEAR(p_date) = 2017) p ON p.ID_teacher=t.ID_teacher WHERE ID_project is NULL",
+        "schema": "ID, Дата рождения, Фамилия, Кафедра, Дата принятия на работу, Дата конца работа"
+    },
+    {
+        "query":"SELECT ID_teacher, t_birthday, surname, department, employment,  dismissal FROM tab WHERE count_mark = (SELECT MAX(count_mark) FROM tab)",
+        "schema": "ID, Дата рождения, Фамилия, Кафедра, Дата принятия на работу, Дата конца работа"
+    }
+]

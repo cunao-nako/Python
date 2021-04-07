@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block Title %}Результат{% endblock %}
+
+{% block Content %}
+    <form class="wrapper" method='POST' action=''>
+        <label for="year" class="wrapper__item">
+            <div class="text-input__label">
+                Введите дату начала промежутка (в формате ГГГГ-ММ-ДД):
+            </div>
+            <input class="text-input text-input__text" required name="date-start" type="text">
+        </label>
+        <label for="year" class="wrapper__item">
+            <div class="text-input__label">
+                Введите дату конца промежутка (в формате ГГГГ-ММ-ДД):
+            </div>
+            <input class="text-input text-input__text" required name="date-end" type="text">
+        </label>
+        <input class="wrapper__item button button-standard" value="Отправить" name="send" type='submit'>
+        <a href="/reports/" class="wrapper__item link">Назад</a>
+    </form>
+{% endblock %}

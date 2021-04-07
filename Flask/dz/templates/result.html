@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block Title %}Результат{% endblock %}
+
+{% block Content %}
+    <div class="wrapper">
+        {% if result %}
+            <table class="wrapper__item" border="1" width="60%">
+                <tr>
+                    {% for key in result[0].keys() %}
+                        <td align="center" style="background-color: aqua"> {{ key }}</td>
+                    {% endfor %}
+                </tr>
+                {% for item in result %}
+                    <tr>
+                        {% for value in item.values() %}
+                            <td align="center"> {{ value }}</td>
+                        {% endfor %}
+                    </tr>
+                {% endfor %}
+            </table>
+        {% endif %}
+
+        <a href="{{ url }}" class="wrapper__item link">Назад</a>
+    </div>
+
+{% endblock %}

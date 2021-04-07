@@ -1,0 +1,33 @@
+{%extends 'messanger/base.html'%}
+
+{%block body%}
+        <div class="profile">
+            <h1>Find users:</h1>
+            <form action="" method="POST"> {% csrf_token %}
+                <input type="text" name='searched_name' placeholder="Users name: "><br><br>
+                <input type="submit" name='find' value="Find" class="button">
+            {%if name%}
+                {%if name != '0' and name != '1' and name != '2'%}
+                <br><br>
+                <h1>Finded users:</h1>
+                <h3>{{name}}</h3>
+                    <form action="" method="POST"> {% csrf_token %}
+                        <br>
+                        <input type="submit" name='add_user' value="Add user to friend list" class="button">
+                {%endif%}
+            </form>
+                {%if name == '0'%}
+                <br><br>
+                    <h3>User don't exist.</h3>
+                {%endif%}
+                {%if name == '1'%}
+                <br><br>
+                    <h3>Request has been already sent,<br>by You or to You,<br>check your "Requests".</h3>
+                {%endif%}
+                {%if name == '2'%}
+                <br><br>
+                    <h3>You are already friends,<br>with this user.</h3>
+                {%endif%}
+            {%endif%}
+        </div>
+{%endblock%}

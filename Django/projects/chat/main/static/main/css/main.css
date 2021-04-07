@@ -1,0 +1,89 @@
+body {
+    background-color: #2c2c2c;
+    max-height: 100%;
+    overflow: hidden;
+}
+
+aside {
+    float: left;
+    background: #181818;
+    width: 20%;
+    padding: 2.5%;
+    height: 100vh;
+    color: #fff;
+    border-right: 5px solid #4d4d4d;
+    text-align: center;
+}
+
+aside .logo {
+    color: #eb5959;
+    font-size: 40px;
+    margin-left: 10px;
+    font-weight: bold;
+    position: relative;
+}
+
+aside h4 {
+    margin-top: 60%;
+    font: 30px;
+    position: relative;
+}
+
+aside ul {
+    margin-top: 20%;
+    list-style: none;
+    text-align: left;
+}
+
+aside ul li {
+    color: white;
+    display: block;
+    margin-top: 20px;
+    transition: transform .4s ease;
+}
+
+aside ul li:hover, aside ul a:hover {
+    color: #eb5959;
+    text-decoration: none;
+    transform: scale(1.05);
+
+}
+
+main .profile {
+    float: left;
+    color: #fff;
+    text-align: center;
+    margin-top: 100px;
+    width: 75%;
+}
+
+aside .button{
+    margin-top: 180%;
+    transition: transform .6s ease;
+    border: none;
+}
+
+aside form .button:hover{
+    color: white;
+    background: #eb5959;
+    text-decoration: none;
+    transform: scale(1.2);
+
+}
+
+.button{
+    transition: transform .6s ease;
+    border: none;
+}
+
+form .button:hover{
+    color: white;
+    background: #eb5959;
+    text-decoration: none;
+    transform: scale(1.2);
+
+}
+
+main .profile h1 {font-size: 50px;}
+
+main .profile p {max-width: 4000px; margin: 20px auto;}

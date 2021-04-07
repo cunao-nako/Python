@@ -1,0 +1,27 @@
+{%extends 'messanger/base.html'%}
+
+{%block body%}
+        <div class="profile">
+            <form action="" method="POST"> {% csrf_token %}
+                <h1>Received requests:</h1>
+                <select name="pk" required=''>
+                    <option disabled>Requests that you received from: </option>
+                    {%for key, item in recieved_requests.items%}
+                        <option value="{{key}}" id="{{item}}" required=''>{{item}}</option>
+                    {%endfor%}
+                </select><br><br>
+                    <input type="submit" name='accept' value="Accept the request" class="button"><br><br>
+                    <input type="submit" name='cancel' value="Cancel the request" class="button"><br><br>
+            </form>
+            <form action="" method="POST"> {% csrf_token %}
+                <h1>Sent requests:</h1>
+                <select name="pk" required='' required=''>
+                    <option disabled>Requests that you send to: </option>
+                    {%for key, item in send_requests.items%}
+                        <option value="{{key}}" id="{{item}}" required=''>{{item}}</option>
+                    {%endfor%}
+                </select><br><br>
+                    <input type="submit" name='cancel' value="Cancel the request" class="button"><br><br>
+            </form>
+        </div>
+{%endblock%}

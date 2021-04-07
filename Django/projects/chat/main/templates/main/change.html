@@ -1,0 +1,19 @@
+{%extends 'main/base.html'%}
+
+{%block title%}Profile{%endblock%}
+
+{%block body%}
+    <div class="profile">
+        <h1>Changing Profile</h1>
+        <br><br>
+        <form action="/" method="POST"> {% csrf_token %}
+            <h2>New Username:</h2><br>
+            <input type="text" name='new_username' placeholder="New Username:"><br><br>
+            <h2>New Password:</h2><br>
+            <input type="text" name='new_password' placeholder='New Password:'><br><br>
+            <input type="submit" name='save' value="Save" class="button">
+            <br><br>
+            <input type="submit" name='back' value="Back" class="button">
+        </form>
+    </div>
+{%endblock%}

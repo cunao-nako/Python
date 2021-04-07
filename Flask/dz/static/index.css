@@ -1,0 +1,121 @@
+:root {
+    --main-background-color: #FFFFFF;
+    --main-app-color: #0c79ee;
+    --main-font-family: 'Helvetica', serif;
+    --main-font-size: 24px;
+    --main-font-color: #000000;
+    --main-font-weight: bold;
+    --main-screen-width: 1000px;
+    --main-border-margin: 10px;
+    --main-border-thickness: 4px;
+    --main-border-radius: 40px;
+    --input-height: 30px;
+}
+
+html, body {
+    background: var(--main-background-color);
+    font-family: var(--main-font-family);
+    font-size: var(--main-font-size);
+    color: var(--main-font-color);
+    font-weight: var(--main-font-weight);
+    margin: 0;
+    padding: 0;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    margin: var(--main-border-margin) auto;
+    width: var(--main-screen-width);
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border: 3px solid var(--main-app-color);
+    border-radius: 10px;
+}
+
+.wrapper__item {
+    margin-top: 1rem;
+}
+
+.wrapper__item:last-child {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.wrapper__table {
+    margin: 10px;
+}
+
+.wrapper__submit {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.wrapper__submit-back {
+    /*margin-right: auto;*/
+}
+
+.wrapper__submit-submit {
+    margin-left: auto;
+}
+
+.wrapper-content {
+    margin: 10px;
+}
+
+.button {
+    border: none;
+    border-radius: 0.3em;
+    padding: 0.5em 0.5em;
+}
+
+.button:focus {
+    outline: none;
+}
+
+.button-standard {
+    background: var(--main-app-color);
+    color: white;
+    font-size: 0.7em;
+    font-family: inherit;
+    font-style: inherit;
+    font-weight: inherit;
+}
+
+.button-standard:hover {
+    background: #064380;
+}
+
+.text-input {
+    font-family: var(--main-font-family);
+    font-size: var(--main-font-size);
+    height: var(--input-height);
+
+    background: white;
+    border: 2px #5C5858 solid;
+    border-radius: .4em;
+    color: var(--main-font-color);
+
+    margin-bottom: 10px;
+}
+
+.text-input:focus {
+    outline: none;
+}
+
+.link {
+    text-decoration: none;
+    font-weight: normal;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: var(--main-font-color);
+}
+
+.link:hover {
+    color: #c6c6c6;
+}
+

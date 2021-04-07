@@ -1,0 +1,7 @@
+{
+    "python.pythonPath": "/Users/igor/Documents/Programming/Python/Django/bin/python3.9",
+    "python.linting.pylintEnabled": false,
+    "python.linting.pycodestyleEnabled": true,
+    "python.linting.enabled": false,
+    "terminal.integrated.shell.osx": "/usr/local/bin/zsh"
+}

@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block Title %}Выбор проекта{% endblock %}
+
+{% block Content %}
+    <div class="wrapper">
+        <form method="POST">
+            {% if projects|count %}
+                <table class="wrapper__item" border="1" width="100%">
+                    <tr>
+                        {% for key in projects[0].keys() %}
+                            <td align="center" style="background-color: aqua"> {{ key }}</td>
+                        {% endfor %}
+                    </tr>
+                    {% for item in projects %}
+                        <tr>
+                            {% for value in item.values() %}
+                                <td align="center"> {{ value }}</td>
+                            {% endfor %}
+                            <td>
+                                <input type="radio" required name="idproject" value="{{ item.ID }}">
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    <tr>
+                        <td colspan="6" align="center">
+                            <input class="button button-standard" type=submit value='Выбрать' name='choose'>
+                        </td>
+                    </tr>
+                </table>
+                </form>
+                {% else %}
+                    <h2>Нет доступных проектов</h2>
+            {% endif %}
+        <div class="wrapper__item">
+            <form method="POST">
+                <input class="button button-standard" type=submit value='К черновику' name='draft'>
+            </form>
+        </div>
+        <div class="wrapper__item">
+            <a href="/" class="link">Назад</a>
+        </div>
+    </div>
+{% endblock %}

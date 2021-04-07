@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block Title %}
+    Добавление
+{% endblock %}
+
+{% block Content %}
+    <form class="wrapper" method='POST' >
+        <label class="wrapper__item">
+            <div class="text-input__label">
+                Введите дату защиты проекта (в формате ГГГГ-ММ-ДД):
+            </div>
+            <input class="text-input text-input__text" name="date" type="text">
+        </label>
+        <label class="wrapper__item">
+            <div class="text-input__label">
+                Введите аудиторию:
+            </div>
+            <input class="text-input text-input__text" name="classroom" type="text">
+        </label>
+        <label class="wrapper__item">
+            <div class="text-input__label">
+                Введите номер коммисии (от 1 до 4):
+            </div>
+            <input class="text-input text-input__text" name="commission" type="text">
+        </label>
+        <input class="wrapper__item button button-standard" value="Добавить" name="insert" type='submit'>
+        <div class="wrapper__item">
+            <a href="/insert/" class="link">Назад</a>
+        </div>
+    </form>
+{% endblock %}

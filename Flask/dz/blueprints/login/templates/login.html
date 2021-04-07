@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block Title %}Авторизация{% endblock %}
+
+{% block Content %}
+    <div class="wrapper-content, wrapper">
+        <form method='POST'>
+                <label>
+                    <div>Логин:</div>
+                    <input class="text-input" required type='text' name='login'>
+                </label>
+                <label>
+                    <div>Пароль:</div>
+                    <input class="text-input" required type='password' name='password'>
+                </label>
+                <div class="wrapper__submit">
+                    <input class="button button-standard" value="Войти" name="login" type='submit'>
+                </div>
+        </form>
+        <form action="" method="POST">
+            <div class="wrapper__submit">
+                <input class="button button-standard" value="Зарегистрироваться" name="signin" type='submit'>
+            </div>
+        </form>
+    </div>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block Title %}{{ message['title'] }}{% endblock %}
+
+{% block Content %}
+    <div class="wrapper">
+        <div class="wrapper__item" style="color: #880000">{{ message['message'] }}</div>
+        {% if message['extra'] %}
+            <a href="{{message['extra']}}" class="wrapper__item link">Да</a>
+        {% endif %}
+        {% if message['redirect'] %}
+            <a href="{{message['redirect']}}" class="wrapper__item link">Назад</a>
+        {% else %}
+            <a href="/" class="wrapper__item link">Назад</a>
+        {% endif %}
+    </div>
+{% endblock %}

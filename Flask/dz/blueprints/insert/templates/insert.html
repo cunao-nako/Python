@@ -1,0 +1,40 @@
+
+{% extends 'base.html' %}
+
+{% block Title %}Расписание{% endblock %}
+
+{% block Content %}
+    <div class="wrapper">
+        <form class="wrapper__item" method="POST">
+            {% if schedule|count %}
+                <table class="wrapper__item" border="1" width="100%">
+                    <tr>
+                        {% for key in schedule[-1].keys() %}
+                            <td align="center" style="background-color: aqua"> {{ key }}</td>
+                        {% endfor %}
+                    </tr>
+                    {% for item in schedule %}
+                        <tr>
+                            {% for key in schedule[-1].keys() %}
+                                <td align="center"> {{ item[key] }}</td>
+                            {% endfor %}
+                            <form action="" method=POST>
+                                <input type=hidden name=idschedule value={{ item['ID'] }}>
+                                <td><input type=submit value='Удалить' name='delete'></td>
+                            </form>
+                        </tr>
+                    {% endfor %}
+                </table>
+                <br>
+            {% else %}
+                <h2>Нет доступного рассписания</h2>
+            {% endif %}
+        </form>
+        <div class="wrapper__item">
+            <a href="/insert/add/" class="link">Добавить</a>
+        </div>
+        <div class="wrapper__item">
+            <a href="/" class="link">Назад</a>
+        </div>
+    </div>
+{% endblock %}

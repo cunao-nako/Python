@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block Title %}Запросы{% endblock %}
+
+{% block Content %}
+    <div class="wrapper">
+        {% for item in queries %}
+            <div class="wrapper__item">
+                <a href="{{ item.url }}" class="link">{{ item.name }}</a>
+            </div>
+            <br>
+        {% endfor %}
+        <a href="/" class="wrapper__item link">Назад</a>
+    </div>
+{% endblock %}
